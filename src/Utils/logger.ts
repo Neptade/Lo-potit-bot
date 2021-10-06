@@ -6,7 +6,7 @@ enum color {
   grey = "\x1b[30m%s\x1b[0m",
 }
 
-class Logger {
+export class Logger {
   info(message: string): void {
     this.writeIntoFile(message, "INFO");
     console.log(color.grey, this.getDate(), message);

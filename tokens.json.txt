@@ -1,0 +1,4 @@
+{
+  "TOKEN_DEV":"TOKEN HERE",
+  "TOKEN_PROD":"TOKEN HERE"
+}

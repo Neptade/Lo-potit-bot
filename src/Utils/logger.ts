@@ -54,7 +54,7 @@ export class Logger {
       this.getUnitWithZero(date.getMonth() + 1) +
       "_" +
       this.getUnitWithZero(date.getDate()) +
-      "_BotTemplate.log";
+      "_LoPotitBot.log";
 
     fs.appendFile(
       "./logs/" + fileName,

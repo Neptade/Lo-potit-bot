@@ -2,7 +2,7 @@
   "name": "typescript",
   "version": "1.0.0",
   "description": "",
-  "main": "src/main.ts",
+  "main": "src/main.ts.txt",
   "scripts": {
     "dev": "cross-env NODE_ENV=dev nodemon src/main.ts",
     "start": "cross-env NODE_ENV=prod nodemon src/main.ts",
@@ -11,22 +11,23 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@typeit/discord": "^4.0.9",
     "cross-env": "^7.0.3",
-    "discord.js": "^13.1.0",
+    "discord.js": "^13.0.0",
     "dotenv": "^10.0.0",
     "eslint": "^7.26.0",
     "node-schedule": "^2.0.0",
-    "nodemon": "^2.0.7",
+    "nodemon": "^2.0.13",
     "package.json": "^2.0.1",
+    "reflect-metadata": "^0.1.13",
     "ts-node": "^10.2.1",
     "tslib": "^2.2.0",
-    "typescript": "^4.2.4"
+    "typescript": "^4.2.4",
+    "wokcommands": "^1.5.3"
   },
   "devDependencies": {
     "@types/node": "^16.10.3",
-    "@typescript-eslint/eslint-plugin": "^4.24.0",
-    "@typescript-eslint/parser": "^4.24.0",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
     "eslint": "^7.26.0"
   }
 }

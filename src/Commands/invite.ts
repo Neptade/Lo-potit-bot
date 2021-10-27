@@ -1,15 +1,28 @@
-import {
-    Discord,
-    Description, Command, CommandMessage,
-} from "@typeit/discord";
+import {ICommand} from "wokcommands";
+import {MessageActionRow, MessageButton, MessageEmbed} from "discord.js";
 
-@Discord("!")
-export abstract class AppDiscord {
-    @Command("invite")
-    @Description("Invitation link of Lo potit bot")
+export default {
+    category: 'Information',
+    description: 'Invite mwaaaaaaaaaa',
 
-    private invite(command: CommandMessage): void {
-        command.channel.send("Invitez-moi ! :hot_face:");
-        command.channel.send("https://discordapp.com/oauth2/authorize?&client_id=893613277068820501&scope=bot&permissions=8");
-    }
-}
+    slash: true,
+    testOnly: true,
+
+    callback: async ({interaction: msgInt, channel})=> {
+        const embed = new MessageEmbed()
+        .setTitle("Invite moi  🥵")
+        .setColor('GOLD')
+        const row = new MessageActionRow()
+            .addComponents(
+                new MessageButton()
+                    .setURL("https://discord.com/api/oauth2/authorize?client_id=893613277068820501&permissions=8&scope=bot%20applications.commands")
+                    .setStyle("LINK")
+                    .setEmoji("📥")
+                    .setLabel("Allez clique")
+            )
+        await msgInt.reply({
+            embeds: [embed],
+            components: [row],
+        })
+    },
+} as ICommand

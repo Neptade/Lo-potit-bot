@@ -4,9 +4,7 @@ import {MessageActionRow, MessageButton, MessageEmbed} from "discord.js";
 export default {
     category: 'Information',
     description: 'Invite mwaaaaaaaaaa',
-
     slash: true,
-    testOnly: true,
 
     callback: async ({interaction: msgInt, channel})=> {
         const embed = new MessageEmbed()

@@ -45,7 +45,7 @@ export class Logger {
     return unit < 10 ? "0" + unit : unit.toString();
   }
 
-  writeIntoFile(message: string, level: string): void {
+  writeIntoFile(message: string, detail: string): void {
     const date = new Date();
 
     const fileName =
@@ -58,7 +58,7 @@ export class Logger {
 
     fs.appendFile(
       "./logs/" + fileName,
-      this.getDate() + " [" + level + "] " + message + "\n",
+      this.getDate() + " [" + detail + "] " + message + "\n",
       (err) => {
         if (err) {
           console.log("Error writing file " + err);

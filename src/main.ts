@@ -1,4 +1,4 @@
-import {Client, Intents} from "discord.js";
+import {ApplicationCommand, ApplicationCommandManager, Client, Intents} from "discord.js";
 import dotenv from 'dotenv';
 import WOKCommands from "wokcommands";
 import path from 'path';
@@ -7,13 +7,17 @@ dotenv.config()
 const client = new Client({
     intents: [
         Intents.FLAGS.GUILDS,
-        Intents.FLAGS.GUILD_MESSAGES
+        Intents.FLAGS.GUILD_MESSAGES,
     ],
 });
 
 client.on("ready", () => {
     console.log("Logged in as \n" + client.user.username + "\n" + client.user.id + "\n--------------");
-
+    /*
+    client.application.commands.fetch()
+        .then(commands => console.log(commands.forEach(command => command.delete()), `Fetched ${commands.size} commands`))
+        .catch(console.error);
+    */
     new WOKCommands(client, {
         commandsDir: path.join(__dirname, 'Commands'),
         featuresDir: path.join(__dirname, 'Features'),
@@ -22,6 +26,10 @@ client.on("ready", () => {
         typeScript: true,
         testServers: ['826575187721322546', '702521676134482001', '410766134569074691']
     })
+
+    client.application.commands.fetch()
+        .then(commands => console.log(`Fetched ${commands.size} commands`))
+        .catch(console.error);
 });
 
 const TOKEN = (process.env.NODE_ENV === "dev") ? process.env.TOKEN_DEV : process.env.TOKEN_PROD;

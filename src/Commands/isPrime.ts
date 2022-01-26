@@ -29,18 +29,18 @@ export default {
                 `Same as asking what flavour is my car ???? ||pineapple||`,
                 `No, must be >1 (${nb} is not dude)`
             ]
-            return responses[Math.floor(Math.random() * responses.length)]
+            return utils.randomChoice(responses);
         }
         const isPrime = utils.isPrime(nb);
-        const embed = new MessageEmbed()
+        const embed = new MessageEmbed();
         if (isPrime) {
-            logger.info(user.username + ' a trouvé que ' + nb + ' est premier')
-            embed.setTitle(nb + ' is prime bro !!').setColor('DARK_GREEN')
+            logger.info(user.username + ' a trouvé que ' + nb + ' est premier');
+            embed.setTitle(nb + ' is prime bro !!').setColor('DARK_GREEN');
         }
         else {
-            logger.info(user.username + ' a trouvé que ' + nb + ' est premier')
-            embed.setTitle(nb + ' is not prime :\'(').setColor('DARK_RED')
+            logger.info(user.username + ' a trouvé que ' + nb + ' est premier');
+            embed.setTitle(nb + ' is not prime :\'(').setColor('DARK_RED');
         }
-        return embed.setDescription(utils.tag(user))
+        return embed.setDescription(utils.tag(user));
     }
 } as ICommand

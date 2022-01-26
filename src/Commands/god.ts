@@ -27,7 +27,7 @@ export default {
         const calc = Math.floor(Math.exp(utils.day + utils.month));
         if (Number(user.id) % 5 != calc % 5) {
             msg = "Not today " + user.username + " (☞ﾟヮﾟ)☞";
-            logger.writeIntoFile(user.username + " n'est pas dieu aujourd'hui.", ctx.guild.toString());
+            logger.info(user.username + " n'est pas dieu aujourd'hui.");
             if (Number(user.id) % 3 == calc % 3) {
                 const dogs = [
                     "https://tse4.mm.bing.net/th?id=OIP.a3DJB6z2TxA7CeAL0Ivg1wAAAA&pid=Api",
@@ -50,7 +50,7 @@ export default {
                     .setImage(dog)
                     .setFooter("woof")
 
-                logger.writeIntoFile(user.username + " est dog", ctx.guild.toString());
+                logger.info(user.username + " est dog");
                 msg = embed
             }
         } else {
@@ -86,7 +86,7 @@ export default {
                 .setImage(god[0])
                 .setFooter(god[1])
 
-            logger.writeIntoFile(user.username + " est " + god[1], ctx.guild.toString());
+            logger.info(user.username + " est " + god[1]);
             msg = embed;
         }
 

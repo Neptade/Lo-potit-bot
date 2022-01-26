@@ -10,7 +10,7 @@ export default {
     options: [
         {
             name: 'who',
-            description: 'Ton pote est-il dieu ?',
+            description: 'Ton pote en a-t-il une plus grosse ?',
             required: false,
             type: Constants.ApplicationCommandOptionTypes.USER,
         },
@@ -23,15 +23,6 @@ export default {
             user = ctx.options.getUser('who');
         }
 
-
-        /*
-        for (let j = 1; j < 12; j++) {
-            for (let i = 1; i < 31; i++) {
-                console.log(value(user.id, utils.day, utils.month))
-            }
-        }
-        */
-
         let bite = "8";
         const val = value(user.id, utils.day, utils.month)
         for (let i = 0; i < val; i++) {
@@ -40,7 +31,7 @@ export default {
 
         bite += "D";
 
-        logger.writeIntoFile(user.username + " a une bite de " + val, ctx.guild.toString())
+        logger.info(user.username + " a une bite de " + val)
         return new MessageEmbed()
             .setTitle(bite)
             .setDescription(utils.tag(user))

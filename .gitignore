@@ -5,3 +5,4 @@ tokens.json
 .idea
 .vscode
 logs/*.log
+*.bat

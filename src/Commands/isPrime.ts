@@ -44,4 +44,3 @@ export default {
         return embed.setDescription(utils.tag(user))
     }
 } as ICommand
-

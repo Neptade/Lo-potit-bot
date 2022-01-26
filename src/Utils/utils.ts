@@ -1,4 +1,11 @@
 const date = new Date();
+
+export enum color {
+    RED = "\x1b[31m%s\x1b[0m",
+    GREEN = "\x1b[32m%s\x1b[0m",
+    GREY = "\x1b[30m%s\x1b[0m",
+}
+
 export const utils = {
     day: date.getDate(),
     month: date.getMonth() + 1,

@@ -30,6 +30,15 @@ client.on("ready", () => {
     client.application.commands.fetch()
         .then(commands => console.log(`Fetched ${commands.size} commands`))
         .catch(console.error);
+
+});
+
+client.on("messageCreate", async(message) => {
+    const channel = message.channel;
+    const author = message.author;
+    if (!author.bot) {
+
+    }
 });
 
 const TOKEN = (process.env.NODE_ENV === "dev") ? process.env.TOKEN_DEV : process.env.TOKEN_PROD;

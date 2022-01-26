@@ -21,6 +21,7 @@ client.on("ready", () => {
     new WOKCommands(client, {
         commandsDir: path.join(__dirname, 'Commands'),
         featuresDir: path.join(__dirname, 'Features'),
+
         delErrMsgCooldown: 10,
         botOwners: ['359743894042443776'],
         typeScript: true,
@@ -30,7 +31,10 @@ client.on("ready", () => {
     client.application.commands.fetch()
         .then(commands => console.log(`Fetched ${commands.size} commands`))
         .catch(console.error);
+
 });
+
+
 
 const TOKEN = (process.env.NODE_ENV === "dev") ? process.env.TOKEN_DEV : process.env.TOKEN_PROD;
 if (typeof TOKEN !== "undefined") {

@@ -4,7 +4,7 @@ export const utils = {
     month: date.getMonth() + 1,
     year: date.getFullYear(),
     tag(user) {
-        return "<@" + user.id + ">"
+        return "<@!" + user.id + ">"
     },
     isPrime(nb):Boolean {
         if (nb <= 3)
@@ -22,5 +22,8 @@ export const utils = {
             i = i + 6
         }
         return true
+    },
+    randomChoice(array) {
+        return array[Math.floor(Math.random() * array.length)]
     }
 };

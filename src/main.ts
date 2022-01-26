@@ -21,6 +21,7 @@ client.on("ready", () => {
     new WOKCommands(client, {
         commandsDir: path.join(__dirname, 'Commands'),
         featuresDir: path.join(__dirname, 'Features'),
+
         delErrMsgCooldown: 10,
         botOwners: ['359743894042443776'],
         typeScript: true,
@@ -33,13 +34,7 @@ client.on("ready", () => {
 
 });
 
-client.on("messageCreate", async(message) => {
-    const channel = message.channel;
-    const author = message.author;
-    if (!author.bot) {
 
-    }
-});
 
 const TOKEN = (process.env.NODE_ENV === "dev") ? process.env.TOKEN_DEV : process.env.TOKEN_PROD;
 if (typeof TOKEN !== "undefined") {

@@ -34,11 +34,11 @@ export default {
         const isPrime = utils.isPrime(nb);
         const embed = new MessageEmbed()
         if (isPrime) {
-            logger.writeIntoFile(user.username + ' a trouvé que ' + nb + ' est premier', ctx.guild.toString())
+            logger.info(user.username + ' a trouvé que ' + nb + ' est premier')
             embed.setTitle(nb + ' is prime bro !!').setColor('DARK_GREEN')
         }
         else {
-            logger.writeIntoFile(user.username + ' a trouvé que ' + nb + ' est premier', ctx.guild.toString())
+            logger.info(user.username + ' a trouvé que ' + nb + ' est premier')
             embed.setTitle(nb + ' is not prime :\'(').setColor('DARK_RED')
         }
         return embed.setDescription(utils.tag(user))

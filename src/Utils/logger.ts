@@ -1,25 +1,22 @@
 import * as fs from "fs";
+import {utils, color} from './utils'
 
-enum color {
-  error = "\x1b[31m%s\x1b[0m",
-  success = "\x1b[32m%s\x1b[0m",
-  grey = "\x1b[30m%s\x1b[0m",
-}
+
 
 export class Logger {
   info(message: string): void {
     this.writeIntoFile(message, "INFO");
-    console.log(color.grey, this.getDate(), message);
+    console.log(color.GREY, this.getDate(), message);
   }
 
   error(message: string): void {
     this.writeIntoFile(message, "ERROR");
-    console.log(color.grey + color.error, this.getDate(), message);
+    console.log(color.GREY + color.RED, this.getDate(), message);
   }
 
   success(message: string): void {
     this.writeIntoFile(message, "SUCCESS");
-    console.log(color.grey + color.success, this.getDate(), message);
+    console.log(color.GREY + color.GREEN, this.getDate(), message);
   }
 
   getDate(): string {

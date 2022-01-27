@@ -2,6 +2,8 @@ import {ApplicationCommand, ApplicationCommandManager, Client, Intents} from "di
 import dotenv from 'dotenv';
 import WOKCommands from "wokcommands";
 import path from 'path';
+import {color} from "./Utils/utils";
+
 dotenv.config()
 
 const client = new Client({
@@ -34,11 +36,9 @@ client.on("ready", () => {
 
 });
 
-
-
 const TOKEN = (process.env.NODE_ENV === "dev") ? process.env.TOKEN_DEV : process.env.TOKEN_PROD;
 if (typeof TOKEN !== "undefined") {
-    client.login(TOKEN).then(r => console.log("Running " + process.env.NODE_ENV));
+    client.login(TOKEN).then(r => console.log(color.GREEN, "\n\n[Running] " + process.env.NODE_ENV));
 } else {
     console.log("No token found")
 }

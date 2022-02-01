@@ -19,6 +19,7 @@
     "node-schedule": "^2.0.0",
     "nodemon": "^2.0.13",
     "pkg.json": "^2.0.8",
+    "package.json": "^2.0.1",
     "reflect-metadata": "^0.1.13",
     "ts-node": "^10.2.1",
     "tslib": "^2.2.0",

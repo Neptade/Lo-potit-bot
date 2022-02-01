@@ -1,8 +1,7 @@
-import {ApplicationCommand, ApplicationCommandManager, Client, Intents} from "discord.js";
+import {Client, Intents} from "discord.js";
 import dotenv from 'dotenv';
 import WOKCommands from "wokcommands";
 import path from 'path';
-import {utils} from "./Utils/utils";
 import chalk from "chalk";
 
 dotenv.config()
@@ -39,7 +38,7 @@ client.on("ready", () => {
 
 const TOKEN = (process.env.NODE_ENV === "dev") ? process.env.TOKEN_DEV : process.env.TOKEN_PROD;
 if (typeof TOKEN !== "undefined") {
-    client.login(TOKEN).then(r => {
+    client.login(TOKEN).then(() => {
         console.log(chalk.underline("\n\n -> Running ", process.env.NODE_ENV == 'dev' ?
             chalk.bgGreen('dev') : chalk.bgRed(process.env.NODE_ENV)), '\n')
     });

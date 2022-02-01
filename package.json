@@ -1,14 +1,14 @@
 {
   "name": "typescript",
   "version": "1.0.0",
-  "description": "",
+  "description": "C'est lo potit bot lo",
   "main": "src/main.ts",
   "scripts": {
     "dev": "cross-env NODE_ENV=dev nodemon src/main.ts",
     "start": "cross-env NODE_ENV=prod nodemon src/main.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "NozZy",
   "license": "ISC",
   "dependencies": {
     "chalk": "2.4.1",
@@ -18,7 +18,7 @@
     "eslint": "^7.26.0",
     "node-schedule": "^2.0.0",
     "nodemon": "^2.0.13",
-    "package.json": "^2.0.1",
+    "pkg.json": "^2.0.8",
     "reflect-metadata": "^0.1.13",
     "ts-node": "^10.2.1",
     "tslib": "^2.2.0",

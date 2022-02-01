@@ -59,7 +59,9 @@ export default {
                         "https://cdn.discordapp.com/avatars/653563141002756106/5e2ef5faf8773b5216aca6b8923ea87a.png",
                         "https://github.com/NozyZy/Lo-potit-bot")
                     .setImage(dog)
-                    .setFooter("woof")
+                    .setFooter({
+                        text: "woof"
+                    })
 
                 logger.info(user.username + " est dog");
                 msg = embed
@@ -91,11 +93,16 @@ export default {
                 .setDescription(utils.tag(user) + " is God today !")
                 .setColor("GOLD")
                 .setThumbnail(user.avatarURL())
-                .setAuthor("Le p'tit bot",
-                    "https://cdn.discordapp.com/avatars/653563141002756106/5e2ef5faf8773b5216aca6b8923ea87a.png",
-                    "https://github.com/NozyZy/Lo-potit-bot")
+                .setAuthor({
+                    name: "Le p'tit bot",
+                    iconURL: "https://cdn.discordapp.com/avatars/653563141002756106/5e2ef5faf8773b5216aca6b8923ea87a.png",
+                    url: "https://github.com/NozyZy/Lo-potit-bot"
+                })
                 .setImage(god[0])
-                .setFooter(god[1])
+                .setFooter({
+                    text: god[1],
+                    iconURL: "http://cdn.onlinewebfonts.com/svg/img_574152.png"
+                })
 
             logger.info(user.username + " est " + god[1]);
             msg = embed;

@@ -2,7 +2,7 @@ import { Client } from 'discord.js'
 import WOKCommands from 'wokcommands'
 import {utils} from "../Utils/utils";
 
-export default (client: Client, instance: WOKCommands) => {
+export default (client: Client) => {
     client.on("messageCreate", async(message) => {
         const author = message.author;
         const content = message.content.toLowerCase();

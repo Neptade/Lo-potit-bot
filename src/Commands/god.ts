@@ -24,7 +24,18 @@ export default {
             user = ctx.options.getUser('who');
         }
 
-        const calc = Math.floor(Math.exp(utils.day + utils.month));
+        // let c, e, c1 = 0, c2 = 0;
+        // for (let d = 1; d < 31; d++) {
+        //     for (let m = 1; m < 13; m++) {
+        //         c = Math.floor(Math.exp(d * m));
+        //         e = Math.floor(Math.exp(m*d + m));
+        //         console.log("-> c", c%5 + " e", e%5);
+        //     }
+        // }
+        // console.log("-> c1", c1);
+        // console.log("-> c2", c2);
+
+        const calc = Math.floor(Math.exp(utils.day * utils.month));
         if (Number(user.id) % 5 != calc % 5) {
             msg = "Not today " + user.username + " (☞ﾟヮﾟ)☞";
             logger.info(user.username + " n'est pas dieu aujourd'hui.");
@@ -48,7 +59,9 @@ export default {
                         "https://cdn.discordapp.com/avatars/653563141002756106/5e2ef5faf8773b5216aca6b8923ea87a.png",
                         "https://github.com/NozyZy/Lo-potit-bot")
                     .setImage(dog)
-                    .setFooter("woof")
+                    .setFooter({
+                        text: "woof"
+                    })
 
                 logger.info(user.username + " est dog");
                 msg = embed
@@ -80,11 +93,16 @@ export default {
                 .setDescription(utils.tag(user) + " is God today !")
                 .setColor("GOLD")
                 .setThumbnail(user.avatarURL())
-                .setAuthor("Le p'tit bot",
-                    "https://cdn.discordapp.com/avatars/653563141002756106/5e2ef5faf8773b5216aca6b8923ea87a.png",
-                    "https://github.com/NozyZy/Lo-potit-bot")
+                .setAuthor({
+                    name: "Le p'tit bot",
+                    iconURL: "https://cdn.discordapp.com/avatars/653563141002756106/5e2ef5faf8773b5216aca6b8923ea87a.png",
+                    url: "https://github.com/NozyZy/Lo-potit-bot"
+                })
                 .setImage(god[0])
-                .setFooter(god[1])
+                .setFooter({
+                    text: god[1],
+                    iconURL: "http://cdn.onlinewebfonts.com/svg/img_574152.png"
+                })
 
             logger.info(user.username + " est " + god[1]);
             msg = embed;

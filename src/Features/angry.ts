@@ -1,7 +1,7 @@
 import { Client } from 'discord.js'
 import WOKCommands from 'wokcommands'
 
-export default (client: Client, instance: WOKCommands) => {
+export default (client: Client) => {
     client.on("messageCreate", async(message) => {
         const channel = message.channel;
         const author = message.author;

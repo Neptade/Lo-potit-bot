@@ -1,22 +1,20 @@
 import * as fs from "fs";
-import {utils, color} from './utils'
-
-
+import chalk from 'chalk';
 
 export class Logger {
   info(message: string): void {
     this.writeIntoFile(message, "INFO");
-    console.log(color.GREY, this.getDate(), message);
+    console.log(chalk.blue(this.getDate()), message);
   }
 
   error(message: string): void {
     this.writeIntoFile(message, "ERROR");
-    console.log(color.GREY + color.RED, this.getDate(), message);
+    console.log(chalk.red(this.getDate()), message);
   }
 
   success(message: string): void {
     this.writeIntoFile(message, "SUCCESS");
-    console.log(color.GREY + color.GREEN, this.getDate(), message);
+    console.log(chalk.green(this.getDate()), message);
   }
 
   getDate(): string {

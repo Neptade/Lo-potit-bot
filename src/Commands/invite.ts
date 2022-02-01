@@ -6,7 +6,7 @@ export default {
     description: 'Invite mwaaaaaaaaaa',
     slash: true,
 
-    callback: async ({interaction: msgInt, channel})=> {
+    callback: async ({interaction: msgInt})=> {
         const embed = new MessageEmbed()
         .setTitle("Invite moi  🥵")
         .setColor('GOLD')

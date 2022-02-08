@@ -5,7 +5,7 @@ import logger from "../Utils/logger";
 
 export default {
     category: 'Useful',
-    description: 'Qui a la plus gorsse ? ( ͡° ͜ʖ ͡°)',
+    description: 'Qui a la plus grosse ? ( ͡° ͜ʖ ͡°)',
     slash: true,
     options: [
         {
@@ -25,11 +25,14 @@ export default {
 
         let bite = "8";
         const val = value(user.id, utils.day, utils.month)
-        for (let i = 0; i < val; i++) {
-            bite += "=";
-        }
+        if (val == utils.day) bite = "( ͡° ͜ʖ ͡°)";
+        else {
+            for (let i = 0; i < val; i++) {
+                bite += "=";
+            }
 
-        bite += "D";
+            bite += "D";
+        }
 
         logger.info(user.username + " a une bite de " + val)
         return new MessageEmbed()

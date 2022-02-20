@@ -24,16 +24,16 @@ export default {
             user = ctx.options.getUser('who');
         }
 
-        // let c, e, c1 = 0, c2 = 0;
-        // for (let d = 1; d < 31; d++) {
-        //     for (let m = 1; m < 13; m++) {
-        //         c = Math.floor(Math.exp(d * m));
-        //         e = Math.floor(Math.exp(m*d + m));
-        //         console.log("-> c", c%5 + " e", e%5);
-        //     }
-        // }
-        // console.log("-> c1", c1);
-        // console.log("-> c2", c2);
+        let c, e, c1 = 0, c2 = 0;
+        for (let d = 1; d < 31; d++) {
+            for (let m = 1; m < 13; m++) {
+                c = Math.floor(Math.exp(d * m));
+                e = Math.floor(Math.exp(m*d + m));
+                console.log("-> c", c%5 + " e", e%5);
+            }
+        }
+        console.log("-> c1", c1);
+        console.log("-> c2", c2);
 
         const calc = Math.floor(Math.exp(utils.day * utils.month));
         if (Number(user.id) % 5 != calc % 5) {

@@ -7,6 +7,7 @@ export default {
     category: 'Useful',
     description: 'Es-tu dieu ? :o',
     slash: true,
+    testOnly: true,
     options: [
         {
             name: 'who',
@@ -16,7 +17,7 @@ export default {
         },
     ],
 
-    callback: ({ interaction})=> {
+    callback: ({ interaction })=> {
         let msg;
         let user = interaction.user;
         let ctx = interaction;

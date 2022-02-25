@@ -27,7 +27,7 @@ client.on("ready", () => {
         delErrMsgCooldown: 10,
         botOwners: ['359743894042443776'],
         typeScript: true,
-        testServers: ['826575187721322546', '702521676134482001', '410766134569074691']
+        testServers: ['600819782496813229','410766134569074691']
     })
 
     client.application.commands.fetch()
